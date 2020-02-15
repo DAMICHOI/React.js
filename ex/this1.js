@@ -6,6 +6,7 @@ function person() {
 // arms의 출력 결과는 무엇인가?
 // console.log(arms);
 // Person() 실행결과는 무엇인가? 그 이유는?
-console.log(person());
+console.log(person())
+console.log(new person());
 // arms의 출력 결과는 무엇인가?  여기서 사용된 this는 무엇인가?
-console.log(arms);
+//console.log(arms);

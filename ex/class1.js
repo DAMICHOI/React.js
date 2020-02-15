@@ -1,7 +1,4 @@
 // Student 라는 이름의 클래스를 생성하시오.
-class Student {
-    
-}
 
 // 생성자를 추가하시오.
 
@@ -17,3 +14,20 @@ class Student {
 
 // 생성자의 역할은 무엇인가?
 // 생성자에 사용된 this는 무엇을 가르키는가?
+
+class Student {
+    constructor(name) { // constructor : 생성자
+        // 속성 작성법
+        // this.속성명 = 파라메터
+        this.name = name;
+    }
+    
+    changeName(userName) {  // changeName 메서드 추가 (userName 파라메터)
+        this.name = userName;   // name 속성을 userName 값으로 업데이트
+    }
+}
+
+const user1 = new Student("Jane");  // () : 생성자로 호출하라는 뜻
+console.log(user1)
+user1.changeName("Tom");
+console.log(user1);

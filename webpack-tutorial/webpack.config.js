@@ -16,6 +16,20 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                // use: {
+                //     loader: ['babel-loader', 'eslint-loader'],
+                //     options: {
+                //         presets: ['@babel/preset-env']
+                //     }
+                // }
+                use: [
+                    'babel-loader',
+                    'eslint-loader'
+                ]
+            },
+            {
                 test: /\.css$/i,    // test에는 정규표현식이 들어감. true/false를 판단하는 predicate 역할
                 // css-loader은 css 파일을 javascript 변수로 만들어서 string으로 변경해줌, style-loader는 변수를 꺼내와서 style 태그(css)로 만들어줌.
                 use: [

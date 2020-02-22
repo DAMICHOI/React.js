@@ -1,3 +1,8 @@
+//CommonJS 스펙의 모듈을 가져오는 방법 : require
+const _ = require('lodash');
+import './style.css';
+import './hello.scss';
+
 function component() {
     let element = document.createElement('div');
 
@@ -10,7 +15,7 @@ function component() {
     3. 페이지가 바뀔때마다 이전페이지에서 로딩했던 동일한 javascript 파일이 대부분 다시 로딩되어져야 함
     위와 같은 문제점 때문에 모듈 방식을 사용하는 것이 좋음
     */
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.innerHTML = _.join(['Hello', 'webpack!!'], ' ');
 
     return element;
 }

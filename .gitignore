@@ -1,2 +1,7 @@
 /webpack-tutorial/node_modules/
+/webpack-tutorial/package-lock.json
+
 /scoreboard/node_modules/
+/scoreboard/package-lock.json
+
+.idea

@@ -116,47 +116,7 @@ const Player = (props) => {
     );
 }
 
-// class가 React.Component 를 상속받는다.
-// (부모가 갖고있는 모든 render method 를 사용할 수 있다.)
-// react element 를 return 한다.
-class Counter extends React.Component {
-    // 클래스 바로 아래에 선언되는 변수는 속성이 된다.
-    // var, const, let 사용하지 않아도 된다.
-    state = {
-        score: 0
-    }
-    // constructor() {
-    //     // 상속 받을 경우 super 클래스로 부모의 생성자를 호출하여, 부모로부터 물려받은 모든 속성을 초기화
-    //     super();
-    //     this.state = {
-    //         score: 0
-    //     }
-    // }
-
-    plus() {
-        // this.state.score += 1; 값만 변경
-        // 값을 변경하고 UI도 렌더링 하려면 반드시 setState로 변경
-        this.setState({score: this.state.score + 1});
-    }
-
-    minus() {
-        // this.state.score += 1; 값만 변경
-        // 값을 변경하고 UI도 렌더링 하려면 반드시 setState로 변경
-        this.setState({score: this.state.score - 1});
-    }
-
-    // 이벤트 핸들러 오른쪽은 반드시 함수 선언문이 와야 한다.
-    render() {
-        return (
-            <div className="counter">
-                <button className="counter-action decrement" onClick={this.minus.bind(this)}> - </button>
-                <span className="counter-score">{this.state.score}</span>
-                <button className="counter-action increment" onClick={this.plus.bind(this)}> + </button>
-            </div>
-        );
-    }
-}
-/*const Counter = (props) => {
+const Counter = (props) => {
     return (
         <div className="counter">
             <button className="counter-action decrement"> - </button>
@@ -164,7 +124,7 @@ class Counter extends React.Component {
             <button className="counter-action increment"> + </button>
         </div>
     );
-}*/
+}
 
 /*
 "" : String

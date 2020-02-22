@@ -1,0 +1,14 @@
+{
+  "name": "webpack-tutorial",
+  "version": "1.0.0",
+  "description": "This is a webpack tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DAMICHOI",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

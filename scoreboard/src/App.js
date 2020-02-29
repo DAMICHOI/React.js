@@ -2,6 +2,7 @@ import React from 'react';
 import {Header} from './components/Header';
 import './App.css'; // global로 정의된다.
 import {Player} from './components/Player';
+import {AddPlayerForm} from "./components/AddPlayerForm";
 
 /*
 // 2020.02.22
@@ -62,13 +63,14 @@ class App extends React.Component{
   render() {
     return (
         <div className="scoreboard">
-          <Header title="My Scoreboard" totalPlayers={this.state.players.length}/>
+          <Header title="My Scoreboard" players={this.state.players} totalPlayers={this.state.players.length}/>
           {
             this.state.players.map(player => (
                 <Player name={player.name} score={player.score} id={player.id} key={player.id}
                         removePlayer={this.handleRemove} changeScore={this.handleChangeScore}/>
             ))
           }
+          <AddPlayerForm></AddPlayerForm>
         </div>
     );
   }

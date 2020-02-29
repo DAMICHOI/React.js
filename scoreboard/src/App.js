@@ -29,6 +29,8 @@ function App() {
 */
 
 // 2020.02.29 Migration
+let maxId = 4;
+
 class App extends React.Component{
   state = {
     players: [
@@ -60,6 +62,15 @@ class App extends React.Component{
     })
   }
 
+  handleAddPlayer = (name) => {
+    console.log('handleAddPlayer', name);
+    this.setState(prevState => {
+      const players = [ ...prevState.players];
+      players.push({name, id: ++maxId, score: 0});
+      return {players};
+    });
+  }
+
   render() {
     return (
         <div className="scoreboard">
@@ -70,7 +81,7 @@ class App extends React.Component{
                         removePlayer={this.handleRemove} changeScore={this.handleChangeScore}/>
             ))
           }
-          <AddPlayerForm></AddPlayerForm>
+          <AddPlayerForm addPlayer={this.handleAddPlayer}></AddPlayerForm>
         </div>
     );
   }

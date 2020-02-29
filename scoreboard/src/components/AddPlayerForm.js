@@ -9,9 +9,17 @@ export class AddPlayerForm extends React.Component{
         this.setState({value: e.target.value})
     }
 
+    handleSubmit = (e) => {
+        // submit 의 기본 이벤트 막기
+        e.preventDefault();
+        //e.stopPropagation();
+
+        this.props.addPlayer(this.state.values);
+    }
+
     render() {
         return (
-            <form action="" className="form">
+            <form action="" className="form" onSubmit={this.handleSubmit}>
                 <input value={this.state.value} onChange={this.handleValueChange}
                        type="text" className="input" placeholder="Enter a player name"/>
                 <input type="submit" className="input" value="Add Player"/>

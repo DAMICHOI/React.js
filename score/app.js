@@ -169,9 +169,9 @@ class Counter extends React.Component {
         return (
             /*
             <div className="counter">
-                <button className="counter-action decrement" onClick={this.minus.bind(this)}> - </button>
+                <button className="counter-actions decrement" onClick={this.minus.bind(this)}> - </button>
                 <span className="counter-score">{this.state.score}</span>
-                <button className="counter-action increment" onClick={this.plus.bind(this)}> + </button>
+                <button className="counter-actions increment" onClick={this.plus.bind(this)}> + </button>
             </div>
              */
             <div className="counter">
@@ -188,9 +188,9 @@ class Counter extends React.Component {
 /*const Counter = (props) => {
     return (
         <div className="counter">
-            <button className="counter-action decrement"> - </button>
+            <button className="counter-actions decrement"> - </button>
             <span className="counter-score">{props.score}</span>
-            <button className="counter-action increment"> + </button>
+            <button className="counter-actions increment"> + </button>
         </div>
     );
 }*/

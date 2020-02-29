@@ -4,4 +4,7 @@
 /scoreboard/node_modules/
 /scoreboard/package-lock.json
 
+/redux-tutorial/node_modules/
+/redux-tutorial/package-lock.json
+
 .idea

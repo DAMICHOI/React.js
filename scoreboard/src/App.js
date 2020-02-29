@@ -1,4 +1,5 @@
 import React from 'react';
+import {Header} from './components/Header';
 import './App.css'; // global로 정의된다.
 
 /*
@@ -26,16 +27,6 @@ function App() {
 */
 
 // 2020.02.29 Migration
-const Header = (props) => {
-  return (
-      <header className="header">
-        <h1 className="h1">{props.title}</h1>
-        <span className="stats">Players: {props.totalPlayers}</span>
-      </header>
-  );
-}
-
-
 const Player = (props) => {
   return (
       <div className="player">

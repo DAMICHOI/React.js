@@ -13,8 +13,7 @@ export class AddPlayerForm extends React.Component{
         // submit 의 기본 이벤트 막기
         e.preventDefault();
         //e.stopPropagation();
-
-        this.props.addPlayer(this.state.values);
+        this.props.addPlayer(this.state.value);
     }
 
     render() {

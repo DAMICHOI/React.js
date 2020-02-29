@@ -52,7 +52,7 @@ class App extends React.Component{
   handleChangeScore = (id, delta) => {
     //console.log('changeScore', id, delta);
     this.setState(prevState => {
-      const players = [...prevState.players];
+      const players = [ ...prevState.players ];
       players.forEach(player => {
         if (player.id == id) {
           player.score += delta;
@@ -65,7 +65,9 @@ class App extends React.Component{
   handleAddPlayer = (name) => {
     console.log('handleAddPlayer', name);
     this.setState(prevState => {
-      const players = [ ...prevState.players];
+      // 원본 배열 복사
+      const players = [ ...prevState.players ];
+      // 끝에 추가
       players.push({name, id: ++maxId, score: 0});
       return {players};
     });

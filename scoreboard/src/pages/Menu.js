@@ -25,7 +25,7 @@ export const Menu = (props) => {
                 <NavLink to="/" className="navbar-brand">Home</NavLink>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
+                    <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink to="/heroes" className="nav-link">heroes</NavLink>
                         </NavItem>

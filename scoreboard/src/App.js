@@ -5,6 +5,7 @@ import Player from './components/Player';
 import AddPlayerForm from "./components/AddPlayerForm";
 import {connect, useSelector} from "react-redux";
 import {CustomPlayer} from "./components/CustomPlayer";
+import _ from 'lodash';
 
 /*
 // 2020.02.22
@@ -36,12 +37,17 @@ let maxId = 4;
 //class App extends React.Component{
 function App(props) {
     const players = useSelector(state => state.player.players)
+    const getHighscore = () => {
+        const highscore = _.maxBy(players, 'score').score;
+        return highscore ? highscore : null;
+    }
     return (
         <div className="scoreboard">
           <Header title="My Scoreboard" players={players}/>
           {
             props.players.map(player => (
-                <CustomPlayer name={player.name} score={player.score} id={player.id} key={player.id}/>
+                <CustomPlayer name={player.name} score={player.score} id={player.id} key={player.id}
+                isHighScore={getHighscore() === player.score}/>
             ))
           }
 

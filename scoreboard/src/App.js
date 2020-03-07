@@ -43,7 +43,7 @@ class App extends React.Component{
     })
   }
 
-  handleChangeScore = (id, delta) => {
+/*  handleChangeScore = (id, delta) => {
     //console.log('changeScore', id, delta);
     this.setState(prevState => {
       const players = [ ...prevState.players ];
@@ -54,7 +54,7 @@ class App extends React.Component{
       });
       return {players};
     })
-  }
+  }*/
 
   /*handleAddPlayer = (name) => {
     console.log('handleAddPlayer', name);
@@ -74,7 +74,7 @@ class App extends React.Component{
           {
             this.props.players.map(player => (
                 <Player name={player.name} score={player.score} id={player.id} key={player.id}
-                        removePlayer={this.handleRemove} changeScore={this.handleChangeScore}/>
+                        removePlayer={this.handleRemove}/>
             ))
           }
 

@@ -7,7 +7,21 @@ const playerInitialState = {
     ]
 };
 
+let maxId = 4;
 export const player = (state = playerInitialState, action) => {
-
+    switch (action.type) {
+        case 'ADD_PLAYER':
+            // 기존 배열을 deep copy 하여 새로운 배열을 생성
+            const players = [ ...state.players ];
+            players.push({
+                name: action.name,
+                score: 0,
+                id: ++maxId
+            })
+            return {
+                ...state,
+                players
+            }
+    }
     return state;
 }

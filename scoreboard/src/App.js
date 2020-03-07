@@ -4,6 +4,7 @@ import './App.css'; // global로 정의된다.
 import Player from './components/Player';
 import AddPlayerForm from "./components/AddPlayerForm";
 import {connect, useSelector} from "react-redux";
+import {CustomPlayer} from "./components/CustomPlayer";
 
 /*
 // 2020.02.22
@@ -40,7 +41,7 @@ function App(props) {
           <Header title="My Scoreboard" players={players}/>
           {
             props.players.map(player => (
-                <Player name={player.name} score={player.score} id={player.id} key={player.id}/>
+                <CustomPlayer name={player.name} score={player.score} id={player.id} key={player.id}/>
             ))
           }
 

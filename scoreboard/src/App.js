@@ -35,13 +35,13 @@ let maxId = 4;
 class App extends React.Component{
 
 
-  handleRemove = (id) => {
+  /*handleRemove = (id) => {
     //console.log('handleRemove', id)
     this.setState(prevState => {
       const players = prevState.players.filter(player => { return player.id !== id });
       return {players};
     })
-  }
+  }*/
 
 /*  handleChangeScore = (id, delta) => {
     //console.log('changeScore', id, delta);
@@ -73,8 +73,7 @@ class App extends React.Component{
           <Header title="My Scoreboard" players={this.props.players}/>
           {
             this.props.players.map(player => (
-                <Player name={player.name} score={player.score} id={player.id} key={player.id}
-                        removePlayer={this.handleRemove}/>
+                <Player name={player.name} score={player.score} id={player.id} key={player.id}/>
             ))
           }
 

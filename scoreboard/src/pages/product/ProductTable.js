@@ -10,6 +10,7 @@ export const ProductTable = (props) => {
     for (let key in category) {
         categoryList.push(<ProductCategoryRow category={key} key={key}/>);
         category[key].forEach(item => {
+            console.log(item)
             categoryList.push(<ProductRow price={item.price} name={item.name} stocked={item.stocked} key={item.name}/>)
         })
     }

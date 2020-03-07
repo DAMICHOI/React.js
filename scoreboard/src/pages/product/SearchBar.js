@@ -5,9 +5,15 @@ export const SearchBar = (props) => {
         <>
             <input placeholder="Search..."
                    value={props.keyword}
-                   onChange={(e) => props.setKeyword(e.target.value)}></input>
+                   onChange={(e) => props.setKeyword(e.target.value)}>
+            </input>
             <br/>
-            <input type="checkbox"></input> Only Show products in stock
+            <label>
+                <input type="checkbox"
+                       checked={props.stockChecked}
+                       onChange={(e) => props.setStockChecked(e.target.checked)}>
+                </input> Only Show products in stock
+            </label>
         </>
     );
 }

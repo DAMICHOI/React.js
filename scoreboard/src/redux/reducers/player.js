@@ -1,4 +1,4 @@
-import {ADD_PLAYER, CHANGE_SCORE} from "../actionTypes";
+import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER} from "../actionTypes";
 
 const playerInitialState = {
     players: [
@@ -11,7 +11,7 @@ const playerInitialState = {
 
 let maxId = 4;
 export const player = (state = playerInitialState, action) => {
-    let players;
+    let players = null;
     switch (action.type) {
         case ADD_PLAYER:
             // 기존 배열을 deep copy 하여 새로운 배열을 생성
@@ -33,6 +33,13 @@ export const player = (state = playerInitialState, action) => {
                     player.score += action.delta
                 }
             })
+            return {
+                ...state,
+                players
+            }
+
+        case REMOVE_PLAYER:
+            players = state.players.filter(player => player.id !== action.id);
             return {
                 ...state,
                 players

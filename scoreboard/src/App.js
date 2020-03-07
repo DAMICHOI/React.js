@@ -1,9 +1,9 @@
 import React from 'react';
 import {Header} from './components/Header';
 import './App.css'; // global로 정의된다.
-import {Player} from './components/Player';
+import Player from './components/Player';
 import AddPlayerForm from "./components/AddPlayerForm";
-import {connect} from "react-redux";
+import {connect, useSelector} from "react-redux";
 
 /*
 // 2020.02.22
@@ -32,47 +32,14 @@ function App() {
 // 2020.02.29 Migration
 let maxId = 4;
 
-class App extends React.Component{
-
-
-  /*handleRemove = (id) => {
-    //console.log('handleRemove', id)
-    this.setState(prevState => {
-      const players = prevState.players.filter(player => { return player.id !== id });
-      return {players};
-    })
-  }*/
-
-/*  handleChangeScore = (id, delta) => {
-    //console.log('changeScore', id, delta);
-    this.setState(prevState => {
-      const players = [ ...prevState.players ];
-      players.forEach(player => {
-        if (player.id == id) {
-          player.score += delta;
-        }
-      });
-      return {players};
-    })
-  }*/
-
-  /*handleAddPlayer = (name) => {
-    console.log('handleAddPlayer', name);
-    this.setState(prevState => {
-      // 원본 배열 복사
-      const players = [ ...prevState.players ];
-      // 끝에 추가
-      players.push({name, id: ++maxId, score: 0});
-      return {players};
-    });
-  }*/
-
-  render() {
+//class App extends React.Component{
+function App(props) {
+    const players = useSelector(state => state.player.players)
     return (
         <div className="scoreboard">
-          <Header title="My Scoreboard" players={this.props.players}/>
+          <Header title="My Scoreboard" players={players}/>
           {
-            this.props.players.map(player => (
+            props.players.map(player => (
                 <Player name={player.name} score={player.score} id={player.id} key={player.id}/>
             ))
           }
@@ -80,7 +47,6 @@ class App extends React.Component{
           <AddPlayerForm></AddPlayerForm>
         </div>
     );
-  }
 }
 
 const mapStateToProps = (state) => ({

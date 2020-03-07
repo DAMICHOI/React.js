@@ -1,4 +1,6 @@
 import React from 'react';
+import {addPlayer, updateUser} from "../redux/actions";
+import {connect} from "react-redux";
 
 export class AddPlayerForm extends React.Component{
     state = {
@@ -26,3 +28,10 @@ export class AddPlayerForm extends React.Component{
         );
     }
 }
+
+const mapActionToProps = (dispatch) => ({
+    // 왼쪽은 props 오른쪽은 function
+    addPlayer: (name) => dispatch(addPlayer(name))
+});
+
+export default connect(null, mapActionToProps)(AddPlayerForm)

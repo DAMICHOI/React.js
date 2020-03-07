@@ -1,18 +1,23 @@
 import React from 'react';
 import './App.css';
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import {updateUser} from "./redux/actions";
 
 function App(props) {
-  console.log(props)
-  return (
-    <div className="App">
-      <p>{props.user}</p>
-      <button onClick={() => props.updateUser('Jane')}>디스패치 테스트</button>
-    </div>
-  );
+    const user = useSelector(state => state.user);
+    const dispatch = useDispatch();
+
+    return (
+        <div className="App">
+          <p>{user}</p>
+          <button onClick={() => dispatch(updateUser('Jane'))}>디스패치 테스트</button>
+        </div>
+      );
 }
 
+export default App;
+
+/*
 // Subscribe: 스토어의 State 를 현재 컴포넌트의  props 로 매핑
 const mapStateToProps = (state) => ({
   // 왼쪽은 props, 오른쪽은 store의 state
@@ -30,3 +35,4 @@ const mapActionToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapActionToProps)(App)
 
 //export default App;
+*/
